@@ -42,7 +42,7 @@ const Footer = () => {
         <div className="col-md-3">
 <h6 className='fw-bold'>Information</h6>
 <hr />
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A labore, doloribus consequuntur minus, cupiditate maiores doloremque eligendi totam voluptatibus omnis eos suscipit saepe id voluptate tempore est ullam, esse sit?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A labore, doloribus consequuntur minus, cupiditate maiores doloremque eligendi totam voluptatibus omnis eos suscipit saepe id voluptate tempore est ullam, esse sit?</p>
         </div>
 
       </div>

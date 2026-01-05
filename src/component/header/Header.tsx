@@ -3,8 +3,11 @@ import Logo from '../../assets/logo.png'
 import { FaHeart } from "react-icons/fa";
 import { FaCartArrowDown } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
+import CartModal from '../../cart/CartModal';
 const Header = () => {
 const[show,setShow]=useState(false)
+  const [modalIsOpen, setIsOpen] = useState(false);
+
   return (
    <nav className="navbar navbar-expand-lg ">
   <div className="container">
@@ -48,7 +51,7 @@ const[show,setShow]=useState(false)
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button className="btn btn-outline-success" type="submit">Search</button>
         <FaHeart style={{fontSize:"32px"}} className='text-danger '/>
-        <FaCartArrowDown style={{fontSize:"32px"}}  className='text-success '/>
+        <FaCartArrowDown onClick={()=>setIsOpen(true)} style={{fontSize:"32px"}}  className='text-success '/>
          <li className="nav-item dropdown mx-3">
          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <MdAccountCircle onClick={()=>setShow(!show)} style={{fontSize:"32px"}}/>
@@ -75,6 +78,7 @@ const[show,setShow]=useState(false)
       </form>
     </div>
   </div>
+  <CartModal modalIsOpen={modalIsOpen} setIsOpen={setIsOpen}/>
 </nav>
   )
 }

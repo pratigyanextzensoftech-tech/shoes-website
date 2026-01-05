@@ -1,15 +1,18 @@
 import "./App.css";
-import Footer from "./component/footer/Footer";
-import Header from "./component/header/Header";
-import HeroSlider from "./component/header/heroSlider/HeroSlider";
-import Product from "./component/product/Product";
-
+import Home from "./page/Home";
+import { Route,Routes } from "react-router-dom";
+import ProductDetails from './component/productDetail/ProductDetail'
+import Layout from "./layout/Layout";
 function App() {
+  
   return <div>
-    <Header/>
-    <HeroSlider/>
-    <Product/>
-    <Footer/>
+     <Routes>
+      <Route element={<Layout/>}>
+      <Route path="/" element={<Home />} />
+      <Route path="/product/:id" element={<ProductDetails />} />
+      </Route>
+    </Routes>
+   
   </div>;
 }
 
