@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from '../../assets/logo.png'
 const Footer = () => {
   return (
+    <div style={{background:"#3a3a62",color:"white"}} className='p-5'>
     <div className='container'>
       <div className="row">
         <div className="col-md-3">
@@ -46,6 +47,7 @@ const Footer = () => {
         </div>
 
       </div>
+    </div>
     </div>
   )
 }

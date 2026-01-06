@@ -5,12 +5,14 @@ import { IoMdClose } from "react-icons/io";
 import CartData from '../component/cartData/CartData';
 import { useCartStore } from "../store/CartStore";
 import cartImage from '../assets/cart.avif'
-
+import { redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 interface modalProps {
   modalIsOpen: boolean;
  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const CartModal = ({modalIsOpen,setIsOpen}:modalProps) => {
+  const navigate=useNavigate()
       const cart = useCartStore((state) => state.cart);
         const { emptyCard } = useCartStore();
 
@@ -27,7 +29,11 @@ const CartModal = ({modalIsOpen,setIsOpen}:modalProps) => {
   function closeModal() {
     setIsOpen(false);
   }
-  
+  const handleCheckout=()=>{
+    console.log("checkout");
+    
+    navigate("/checkout")
+  }
   const customStyles: Modal.Styles = {
     content: {
       top: "0",
@@ -72,7 +78,7 @@ const CartModal = ({modalIsOpen,setIsOpen}:modalProps) => {
         <div className='text-center position-absolute w-100 mb-3 bottom-0 start-50 translate-middle-x'>
             
                 <button onClick={()=>emptyCard()} className="btn w-100 my-2  btn-danger ">Remove All Items</button>
-                <button  onClick={()=>emptyCard()} className="btn   w-100 btn-success "> Proceed to Checkout</button>
+                <button  onClick={handleCheckout } className="btn  w-100 btn-success "> Proceed to Checkout</button>
         </div>
 </>
         }

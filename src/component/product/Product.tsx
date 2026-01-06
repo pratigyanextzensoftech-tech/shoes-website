@@ -104,7 +104,7 @@ navigate(`product/${id},`)
             products.map((item,i)=>(
                 <div key={i} className="col-md-3 rounded-2 my-2">
                     <div className='position-relative rounded-2 object-fit-fill'>
-                        <img onClick={()=>productDetails(item.id)} width="300px" height="200px" className='img-fluid cursor-pointer   object-fit-cover border rounded' src={item.images[0]} alt="" />
+                        <img style={{cursor:"pointer"}} onClick={()=>productDetails(item.id)} width="300px" height="200px" className='img-fluid    object-fit-cover border rounded' src={item.images[0]} alt="" />
                     
                         <div style={{top:"250px"}} className="position-absolute w-100 d-flex gap-4  align-items-center justify-content-center">
                              <FaCartArrowDown onClick={()=>setIsOpen(true)} className={style.icon}/>
